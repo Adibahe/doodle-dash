@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 47 100% 99%; /* Very light yellow/white */
+    --foreground: 47 100% 10%; /* Deep yellow */
+    
+    --primary: 47 100% 50%; /* Bright yellow */
+    --primary-foreground: 0 0% 100%; /* White */
+    
+    --secondary: 47 100% 90%; /* Light yellow */
+    --secondary-foreground: 47 100% 20%; /* Dark yellow */
+    
+    --accent: 47 100% 85%; /* Soft yellow */
+    --accent-foreground: 47 100% 15%; /* Very dark yellow */
+    
+    --muted: 47 50% 95%; /* Very soft yellow */
+    --muted-foreground: 47 50% 40%; /* Muted yellow */
+    
+    --border: 47 100% 80%; /* Light yellow border */
+    --input: 47 100% 85%; /* Soft yellow input */
+    --ring: 47 100% 30%; /* Yellow ring */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  canvas {
+    touch-action: none;
+  }
+}
+
+@layer components {
+  .drawing-canvas {
+    @apply bg-white rounded-lg border-2 border-gray-200 shadow-md cursor-crosshair;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 py-2 font-medium transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-6 py-2 font-medium transition-colors;
+  }
+
+  .btn-success {
+    @apply bg-success text-success-foreground hover:bg-success/90 rounded-full px-6 py-2 font-medium transition-colors;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary/10 rounded-full px-6 py-2 font-medium transition-colors;
+  }
+}
